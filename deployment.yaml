@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: project
-        image: aishwarya/project_2:latest
+        image: aishwarya/myapp:latest
         ports:
         - containerPort: 3000
