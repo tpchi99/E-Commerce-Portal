@@ -1,10 +1,14 @@
 FROM python:3.10
 
-COPY requirements.txt .
+RUN mkdir -p /opt/app/
+
+COPY requirements.txt /opt/app/
 RUN pip install -r requirements.txt
 
-COPY . .
+COPY . /opt/app/
+
+WORKDIR /opt/app/
 
 EXPOSE 5000
 
-CMD ["python", "manage.py runserver"]
+CMD ["python", "/opt/app/manage.py runserver"]
